@@ -302,6 +302,10 @@ kfence_report_error(unsigned long address, bool is_write, struct pt_regs *regs,
 
 	lockdep_on();
 
+#ifdef CONFIG_KFENCE_BUG_ON_DATA_CORRUPTION
+	BUG()
+#endif
+
 	check_panic_on_warn("KFENCE");
 
 	/* We encountered a memory safety error, taint the kernel! */
