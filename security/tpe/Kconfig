@@ -1,0 +1,7 @@
+# SPXD-License-Identifier: GPL-2.0-only
+config SECURITY_TPE
+    bool "Trusted Path Execution (TPE)"
+    depends on SECURITY
+    help
+      Restrict execution of any files that are not in root-owned
+      directories writable only by root, for all non-root users.
